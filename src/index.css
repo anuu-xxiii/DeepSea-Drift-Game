@@ -1,0 +1,80 @@
+/* ─────────────────────────────────────────────
+   DEEP-SEA DRIFT — Mobile-First Stylesheet
+   ───────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #010812;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+body {
+  overscroll-behavior: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Outer Shell */
+.mobile-app-shell {
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 50%, #051428 0%, #010812 100%);
+}
+
+/* Mobile Device Container */
+.mobile-device-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  max-width: 480px;
+  max-height: 854px;
+  background: #030c1e;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* On Desktop / Tablet screens: give it a polished mobile device frame */
+@media (min-width: 500px) and (min-height: 700px) {
+  .mobile-device-container {
+    height: 94vh;
+    border-radius: 28px;
+    border: 3px solid rgba(0, 245, 212, 0.35);
+    box-shadow:
+      0 0 50px rgba(0, 245, 212, 0.2),
+      0 20px 60px rgba(0, 0, 0, 0.8),
+      inset 0 0 15px rgba(0, 245, 212, 0.1);
+  }
+}
+
+/* Canvas crisp rendering */
+canvas {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Button active push animations */
+button:active {
+  transform: scale(0.94) !important;
+}
